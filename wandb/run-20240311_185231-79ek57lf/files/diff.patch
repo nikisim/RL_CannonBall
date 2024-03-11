@@ -1,0 +1,37 @@
+diff --git a/gym_CannonBall/envs/CannonBall_env.py b/gym_CannonBall/envs/CannonBall_env.py
+index 69ad13a..9848841 100644
+--- a/gym_CannonBall/envs/CannonBall_env.py
++++ b/gym_CannonBall/envs/CannonBall_env.py
+@@ -16,6 +16,7 @@ class CannonEnv(gym.Env):
+         # Example for using continuous observations (angle in radians and distance):
+         self.observation_space = spaces.Box(low=np.array([0, 0]), high=np.array([np.pi/2, 1000]), dtype=np.float32)
+         
++        self.info = {}
+         # Initialize state
+         self.angle = None
+         self.distance_to_target = None
+@@ -33,13 +34,13 @@ class CannonEnv(gym.Env):
+         info = {}
+         
+         # Return the next observation, reward, done, and info
+-        return self._get_obs(), reward, done, info
++        return self._get_obs(), reward, done, False,info
+ 
+     def reset(self):
+         # Reset the state of the environment to an initial state
+         self.angle = np.random.uniform(low=0, high=np.pi/2)
+         self.distance_to_target = self.target_distance
+-        return self._get_obs()
++        return self._get_obs(),self.info
+ 
+     def render(self, mode='human', close=False):
+         # Render the environment to the screen
+@@ -55,7 +56,7 @@ class CannonEnv(gym.Env):
+         # For now, we'll just set the distance to a random value
+         # self.distance_to_target = np.random.uniform(low=0, high=self.target_distance)
+         self.current_distance = speed**2 * math.sin(2*self.angle)/(9.80665)
+-        print(f'Current dist: {self.current_distance:.1f}')
++        # print(f'Current dist: {self.current_distance:.1f}')
+         self.distance_to_target = self.target_distance - self.current_distance
+ 
+     def _calculate_reward(self):

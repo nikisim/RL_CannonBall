@@ -1,0 +1,330 @@
+2024-03-11 18:52:31,528 INFO    StreamThr :36201 [internal.py:wandb_internal():87] W&B internal server running at pid: 36201, started at: 2024-03-11 18:52:31.528532
+2024-03-11 18:52:31,529 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: status
+2024-03-11 18:52:31,530 INFO    WriterThread:36201 [datastore.py:open_for_write():85] open: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/run-79ek57lf.wandb
+2024-03-11 18:52:31,530 DEBUG   SenderThread:36201 [sender.py:send():336] send: header
+2024-03-11 18:52:31,532 DEBUG   SenderThread:36201 [sender.py:send():336] send: run
+2024-03-11 18:52:32,141 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: check_version
+2024-03-11 18:52:32,142 INFO    SenderThread:36201 [dir_watcher.py:__init__():219] watching files in: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files
+2024-03-11 18:52:32,142 INFO    SenderThread:36201 [sender.py:_start_run_threads():1078] run started: 79ek57lf with start time 1710172351.527868
+2024-03-11 18:52:32,142 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:52:32,142 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:52:32,142 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: check_version
+2024-03-11 18:52:32,655 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: run_start
+2024-03-11 18:52:32,662 DEBUG   HandlerThread:36201 [system_info.py:__init__():31] System info init
+2024-03-11 18:52:32,662 DEBUG   HandlerThread:36201 [system_info.py:__init__():46] System info init done
+2024-03-11 18:52:32,662 INFO    HandlerThread:36201 [system_monitor.py:start():183] Starting system monitor
+2024-03-11 18:52:32,662 INFO    SystemMonitor:36201 [system_monitor.py:_start():147] Starting system asset monitoring threads
+2024-03-11 18:52:32,662 INFO    HandlerThread:36201 [system_monitor.py:probe():204] Collecting system info
+2024-03-11 18:52:32,663 INFO    SystemMonitor:36201 [interfaces.py:start():187] Started cpu monitoring
+2024-03-11 18:52:32,663 INFO    SystemMonitor:36201 [interfaces.py:start():187] Started disk monitoring
+2024-03-11 18:52:32,663 INFO    SystemMonitor:36201 [interfaces.py:start():187] Started gpu monitoring
+2024-03-11 18:52:32,664 INFO    SystemMonitor:36201 [interfaces.py:start():187] Started memory monitoring
+2024-03-11 18:52:32,664 INFO    SystemMonitor:36201 [interfaces.py:start():187] Started network monitoring
+2024-03-11 18:52:32,672 DEBUG   HandlerThread:36201 [system_info.py:probe():195] Probing system
+2024-03-11 18:52:32,675 DEBUG   HandlerThread:36201 [system_info.py:_probe_git():180] Probing git
+2024-03-11 18:52:32,681 DEBUG   HandlerThread:36201 [system_info.py:_probe_git():188] Probing git done
+2024-03-11 18:52:32,681 DEBUG   HandlerThread:36201 [system_info.py:probe():240] Probing system done
+2024-03-11 18:52:32,681 DEBUG   HandlerThread:36201 [system_monitor.py:probe():213] {'os': 'Linux-6.5.0-25-generic-x86_64-with-glibc2.35', 'python': '3.10.12', 'heartbeatAt': '2024-03-11T15:52:32.673011', 'startedAt': '2024-03-11T15:52:31.525322', 'docker': None, 'cuda': None, 'args': ('--total-timesteps', '50000', '--track', '--wandb-project-name', 'CannonBAll'), 'state': 'running', 'program': '/home/nikisim/Documents/gym-CannonBall/ppo_continuous_action.py', 'codePath': 'ppo_continuous_action.py', 'git': {'remote': 'git@github.com:nikisim/RL_CannonBall.git', 'commit': '274e9e67a21cd300a17ec4927c832d241dea3f81'}, 'email': 'nikisim2000@gmail.com', 'root': '/home/nikisim/Documents/gym-CannonBall', 'host': 'nikisim-kompuhter', 'username': 'nikisim', 'executable': '/usr/bin/python3', 'cpu_count': 8, 'cpu_count_logical': 16, 'cpu_freq': {'current': 3875.026625, 'min': 400.0, 'max': 5050.0}, 'cpu_freq_per_core': [{'current': 4931.936, 'min': 400.0, 'max': 5050.0}, {'current': 3909.476, 'min': 400.0, 'max': 5050.0}, {'current': 3806.274, 'min': 400.0, 'max': 5050.0}, {'current': 400.0, 'min': 400.0, 'max': 5050.0}, {'current': 3281.634, 'min': 400.0, 'max': 5050.0}, {'current': 4924.768, 'min': 400.0, 'max': 5050.0}, {'current': 4924.907, 'min': 400.0, 'max': 5050.0}, {'current': 3326.8, 'min': 400.0, 'max': 5050.0}, {'current': 4924.878, 'min': 400.0, 'max': 5050.0}, {'current': 3644.257, 'min': 400.0, 'max': 5050.0}, {'current': 3311.203, 'min': 400.0, 'max': 5050.0}, {'current': 3713.76, 'min': 400.0, 'max': 5050.0}, {'current': 3260.36, 'min': 400.0, 'max': 5050.0}, {'current': 4893.864, 'min': 400.0, 'max': 5050.0}, {'current': 4935.904, 'min': 400.0, 'max': 5050.0}, {'current': 3810.405, 'min': 400.0, 'max': 5050.0}], 'disk': {'total': 571.9994201660156, 'used': 93.25998306274414}, 'gpu': 'NVIDIA GeForce RTX 4070', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4070', 'memory_total': 12878610432}], 'memory': {'total': 30.56137466430664}}
+2024-03-11 18:52:32,681 INFO    HandlerThread:36201 [system_monitor.py:probe():214] Finished collecting system info
+2024-03-11 18:52:32,681 INFO    HandlerThread:36201 [system_monitor.py:probe():217] Publishing system info
+2024-03-11 18:52:32,681 DEBUG   HandlerThread:36201 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2024-03-11 18:52:32,681 DEBUG   HandlerThread:36201 [system_info.py:_save_pip():67] Saving pip packages done
+2024-03-11 18:52:32,681 DEBUG   HandlerThread:36201 [system_info.py:_save_code():89] Saving code
+2024-03-11 18:52:32,684 DEBUG   HandlerThread:36201 [system_info.py:_save_code():110] Saving code done
+2024-03-11 18:52:32,684 DEBUG   HandlerThread:36201 [system_info.py:_save_patches():127] Saving git patches
+2024-03-11 18:52:32,701 DEBUG   HandlerThread:36201 [system_info.py:_save_patches():169] Saving git patches done
+2024-03-11 18:52:32,701 INFO    HandlerThread:36201 [system_monitor.py:probe():219] Finished publishing system info
+2024-03-11 18:52:32,703 DEBUG   SenderThread:36201 [sender.py:send():336] send: files
+2024-03-11 18:52:32,703 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-metadata.json with policy now
+2024-03-11 18:52:32,704 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file code/ppo_continuous_action.py with policy now
+2024-03-11 18:52:32,704 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file diff.patch with policy now
+2024-03-11 18:52:32,706 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: stop_status
+2024-03-11 18:52:32,706 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: stop_status
+2024-03-11 18:52:32,707 INFO    HandlerThread:36201 [handler.py:handle_tbrecord():747] handling tbrecord: tbrecord {
+  log_dir: "runs/HalfCheetah-v4__ppo_continuous_action__1__1710172350"
+  save: true
+}
+control {
+  relay_id: "e8176925d6764480b9adedf33ddf6763"
+}
+_info {
+  stream_id: "79ek57lf"
+}
+
+2024-03-11 18:52:32,707 DEBUG   HandlerThread:36201 [config_util.py:dict_from_config_file():103] no default config file found in config-defaults.yaml
+2024-03-11 18:52:33,148 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_created():278] file/dir created: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/wandb-summary.json
+2024-03-11 18:52:33,148 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_created():278] file/dir created: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/wandb-metadata.json
+2024-03-11 18:52:33,149 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_created():278] file/dir created: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/requirements.txt
+2024-03-11 18:52:33,149 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_created():278] file/dir created: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/code/ppo_continuous_action.py
+2024-03-11 18:52:33,149 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_created():278] file/dir created: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/diff.patch
+2024-03-11 18:52:33,149 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_created():278] file/dir created: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/code
+2024-03-11 18:52:33,295 INFO    wandb-upload_1:36201 [upload_job.py:push():118] Skipped uploading /tmp/tmpuzegcxl3wandb/t7pg2r4h-code/ppo_continuous_action.py
+2024-03-11 18:52:33,364 DEBUG   SenderThread:36201 [sender.py:send():336] send: telemetry
+2024-03-11 18:52:33,364 DEBUG   SenderThread:36201 [sender.py:send():336] send: tbrecord
+2024-03-11 18:52:33,639 DEBUG   SenderThread:36201 [sender.py:send():336] send: files
+2024-03-11 18:52:33,639 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file events.out.tfevents.1710172352.nikisim-kompuhter.36155.0 with policy live
+2024-03-11 18:52:33,776 INFO    wandb-upload_2:36201 [upload_job.py:push():138] Uploaded file /tmp/tmpuzegcxl3wandb/6e5nsivt-diff.patch
+2024-03-11 18:52:33,777 INFO    wandb-upload_0:36201 [upload_job.py:push():138] Uploaded file /tmp/tmpuzegcxl3wandb/ja6fp0xi-wandb-metadata.json
+2024-03-11 18:52:34,143 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_created():278] file/dir created: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/events.out.tfevents.1710172352.nikisim-kompuhter.36155.0
+2024-03-11 18:52:34,307 INFO    wandb-upload_1:36201 [upload_job.py:push():138] Uploaded file /tmp/tmpuzegcxl3wandb/ja15wjun-events.out.tfevents.1710172352.nikisim-kompuhter.36155.0
+2024-03-11 18:52:36,144 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_created():278] file/dir created: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:52:37,210 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: status_report
+2024-03-11 18:52:38,144 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:52:40,145 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:52:42,145 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:52:42,917 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: status_report
+2024-03-11 18:52:44,145 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:52:46,146 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:52:47,146 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/events.out.tfevents.1710172352.nikisim-kompuhter.36155.0
+2024-03-11 18:52:47,662 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:52:47,662 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:52:47,662 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:52:47,662 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:52:47,662 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:52:47,663 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:52:47,663 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:52:47,663 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:52:47,663 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:52:47,663 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:52:47,663 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:52:47,663 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:52:47,663 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:52:47,663 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:52:47,663 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:52:47,664 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:52:47,664 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:52:47,664 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:52:47,664 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:52:47,664 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:52:47,664 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:52:47,706 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: keepalive
+2024-03-11 18:52:48,146 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/wandb-summary.json
+2024-03-11 18:52:48,151 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:52:48,664 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: status_report
+2024-03-11 18:52:50,147 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:52:52,147 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:52:52,706 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: keepalive
+2024-03-11 18:52:54,148 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:52:54,605 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: status_report
+2024-03-11 18:52:56,148 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:52:57,707 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: keepalive
+2024-03-11 18:52:58,149 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:53:00,149 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:53:00,346 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: status_report
+2024-03-11 18:53:02,149 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:53:02,685 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:53:02,685 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:53:02,685 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:53:02,685 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:53:02,685 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:53:02,686 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:53:02,686 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:53:02,686 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:53:02,687 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:53:02,687 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:53:02,687 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:53:02,687 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:53:02,687 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:53:02,687 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:53:02,687 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:53:02,688 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:53:02,688 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:53:02,688 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:53:02,688 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:53:02,688 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:53:02,688 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:53:02,688 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:53:02,689 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:53:02,689 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:53:02,708 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: keepalive
+2024-03-11 18:53:03,150 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/wandb-summary.json
+2024-03-11 18:53:03,150 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/events.out.tfevents.1710172352.nikisim-kompuhter.36155.0
+2024-03-11 18:53:04,150 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:53:06,036 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: status_report
+2024-03-11 18:53:06,150 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:53:07,708 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: keepalive
+2024-03-11 18:53:08,151 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:53:09,151 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/config.yaml
+2024-03-11 18:53:10,151 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:53:12,152 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:53:12,709 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: keepalive
+2024-03-11 18:53:14,152 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:53:14,572 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: status_report
+2024-03-11 18:53:16,153 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:53:17,706 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:53:17,706 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:53:17,706 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:53:17,706 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:53:17,706 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:53:17,707 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:53:17,707 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:53:17,708 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:53:17,708 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:53:17,708 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:53:17,708 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:53:17,708 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:53:17,708 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:53:17,709 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:53:17,709 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:53:17,709 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:53:17,709 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:53:17,709 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:53:17,709 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:53:17,709 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:53:17,709 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:53:17,709 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:53:17,709 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:53:17,710 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: keepalive
+2024-03-11 18:53:17,710 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:53:18,153 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/wandb-summary.json
+2024-03-11 18:53:18,153 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/events.out.tfevents.1710172352.nikisim-kompuhter.36155.0
+2024-03-11 18:53:18,153 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:53:19,248 DEBUG   SenderThread:36201 [sender.py:send():336] send: exit
+2024-03-11 18:53:19,248 INFO    SenderThread:36201 [sender.py:send_exit():559] handling exit code: 0
+2024-03-11 18:53:19,248 INFO    SenderThread:36201 [sender.py:send_exit():561] handling runtime: 46
+2024-03-11 18:53:19,249 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:53:19,249 INFO    SenderThread:36201 [sender.py:send_exit():567] send defer
+2024-03-11 18:53:19,249 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: defer
+2024-03-11 18:53:19,249 INFO    HandlerThread:36201 [handler.py:handle_request_defer():170] handle defer: 0
+2024-03-11 18:53:19,249 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: defer
+2024-03-11 18:53:19,249 INFO    SenderThread:36201 [sender.py:send_request_defer():583] handle sender defer: 0
+2024-03-11 18:53:19,249 INFO    SenderThread:36201 [sender.py:transition_state():587] send defer: 1
+2024-03-11 18:53:19,249 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: defer
+2024-03-11 18:53:19,249 INFO    HandlerThread:36201 [handler.py:handle_request_defer():170] handle defer: 1
+2024-03-11 18:53:19,249 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: defer
+2024-03-11 18:53:19,249 INFO    SenderThread:36201 [sender.py:send_request_defer():583] handle sender defer: 1
+2024-03-11 18:53:19,249 INFO    SenderThread:36201 [sender.py:transition_state():587] send defer: 2
+2024-03-11 18:53:19,249 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: defer
+2024-03-11 18:53:19,249 INFO    HandlerThread:36201 [handler.py:handle_request_defer():170] handle defer: 2
+2024-03-11 18:53:19,249 INFO    HandlerThread:36201 [system_monitor.py:finish():193] Stopping system monitor
+2024-03-11 18:53:19,249 DEBUG   SystemMonitor:36201 [system_monitor.py:_start():161] Starting system metrics aggregation loop
+2024-03-11 18:53:19,250 INFO    HandlerThread:36201 [interfaces.py:finish():199] Joined cpu monitor
+2024-03-11 18:53:19,250 DEBUG   SystemMonitor:36201 [system_monitor.py:_start():168] Finished system metrics aggregation loop
+2024-03-11 18:53:19,250 INFO    HandlerThread:36201 [interfaces.py:finish():199] Joined disk monitor
+2024-03-11 18:53:19,250 DEBUG   SystemMonitor:36201 [system_monitor.py:_start():172] Publishing last batch of metrics
+2024-03-11 18:53:19,284 INFO    HandlerThread:36201 [interfaces.py:finish():199] Joined gpu monitor
+2024-03-11 18:53:19,284 INFO    HandlerThread:36201 [interfaces.py:finish():199] Joined memory monitor
+2024-03-11 18:53:19,284 INFO    HandlerThread:36201 [interfaces.py:finish():199] Joined network monitor
+2024-03-11 18:53:19,284 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: defer
+2024-03-11 18:53:19,285 INFO    SenderThread:36201 [sender.py:send_request_defer():583] handle sender defer: 2
+2024-03-11 18:53:19,285 INFO    SenderThread:36201 [sender.py:transition_state():587] send defer: 3
+2024-03-11 18:53:19,285 DEBUG   SenderThread:36201 [sender.py:send():336] send: stats
+2024-03-11 18:53:19,285 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: defer
+2024-03-11 18:53:19,285 INFO    HandlerThread:36201 [handler.py:handle_request_defer():170] handle defer: 3
+2024-03-11 18:53:19,285 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: defer
+2024-03-11 18:53:19,285 INFO    SenderThread:36201 [sender.py:send_request_defer():583] handle sender defer: 3
+2024-03-11 18:53:19,285 INFO    SenderThread:36201 [sender.py:transition_state():587] send defer: 4
+2024-03-11 18:53:19,285 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: defer
+2024-03-11 18:53:19,285 INFO    HandlerThread:36201 [handler.py:handle_request_defer():170] handle defer: 4
+2024-03-11 18:53:20,153 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/wandb-summary.json
+2024-03-11 18:53:20,154 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/events.out.tfevents.1710172352.nikisim-kompuhter.36155.0
+2024-03-11 18:53:20,154 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:53:25,287 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: poll_exit
+2024-03-11 18:53:25,287 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: status_report
+2024-03-11 18:53:25,287 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: keepalive
+2024-03-11 18:53:25,288 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: status_report
+2024-03-11 18:53:25,288 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: defer
+2024-03-11 18:53:25,288 INFO    SenderThread:36201 [sender.py:send_request_defer():583] handle sender defer: 4
+2024-03-11 18:53:25,288 INFO    SenderThread:36201 [sender.py:transition_state():587] send defer: 5
+2024-03-11 18:53:25,288 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:53:25,288 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: defer
+2024-03-11 18:53:25,288 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:53:25,289 INFO    HandlerThread:36201 [handler.py:handle_request_defer():170] handle defer: 5
+2024-03-11 18:53:25,289 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:53:25,289 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: poll_exit
+2024-03-11 18:53:25,290 DEBUG   SenderThread:36201 [sender.py:send():336] send: history
+2024-03-11 18:53:25,290 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: summary_record
+2024-03-11 18:53:25,296 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:53:25,297 DEBUG   SenderThread:36201 [sender.py:send():336] send: summary
+2024-03-11 18:53:25,297 INFO    SenderThread:36201 [sender.py:_save_file():1332] saving file wandb-summary.json with policy end
+2024-03-11 18:53:25,297 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: defer
+2024-03-11 18:53:25,297 INFO    SenderThread:36201 [sender.py:send_request_defer():583] handle sender defer: 5
+2024-03-11 18:53:25,297 INFO    SenderThread:36201 [sender.py:transition_state():587] send defer: 6
+2024-03-11 18:53:25,297 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: defer
+2024-03-11 18:53:25,297 INFO    HandlerThread:36201 [handler.py:handle_request_defer():170] handle defer: 6
+2024-03-11 18:53:25,297 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: defer
+2024-03-11 18:53:25,297 INFO    SenderThread:36201 [sender.py:send_request_defer():583] handle sender defer: 6
+2024-03-11 18:53:25,297 INFO    SenderThread:36201 [sender.py:transition_state():587] send defer: 7
+2024-03-11 18:53:25,297 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: status_report
+2024-03-11 18:53:25,297 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: defer
+2024-03-11 18:53:25,297 INFO    HandlerThread:36201 [handler.py:handle_request_defer():170] handle defer: 7
+2024-03-11 18:53:25,297 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: defer
+2024-03-11 18:53:25,297 INFO    SenderThread:36201 [sender.py:send_request_defer():583] handle sender defer: 7
+2024-03-11 18:53:25,370 INFO    SenderThread:36201 [sender.py:transition_state():587] send defer: 8
+2024-03-11 18:53:25,370 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: defer
+2024-03-11 18:53:25,370 INFO    HandlerThread:36201 [handler.py:handle_request_defer():170] handle defer: 8
+2024-03-11 18:53:25,370 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: defer
+2024-03-11 18:53:25,370 INFO    SenderThread:36201 [sender.py:send_request_defer():583] handle sender defer: 8
+2024-03-11 18:53:25,375 INFO    SenderThread:36201 [sender.py:transition_state():587] send defer: 9
+2024-03-11 18:53:25,375 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: defer
+2024-03-11 18:53:25,375 DEBUG   SenderThread:36201 [sender.py:send():336] send: artifact
+2024-03-11 18:53:25,375 INFO    HandlerThread:36201 [handler.py:handle_request_defer():170] handle defer: 9
+2024-03-11 18:53:26,155 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/wandb-summary.json
+2024-03-11 18:53:26,155 INFO    Thread-13 :36201 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:53:27,239 INFO    wandb-upload_2:36201 [upload_job.py:push():96] Uploaded file /home/nikisim/.local/share/wandb/artifacts/staging/tmp8hfq081s
+2024-03-11 18:53:27,239 INFO    wandb-upload_1:36201 [upload_job.py:push():96] Uploaded file /home/nikisim/.local/share/wandb/artifacts/staging/tmpslg3cu4m
+2024-03-11 18:53:27,241 INFO    wandb-upload_0:36201 [upload_job.py:push():96] Uploaded file /home/nikisim/.local/share/wandb/artifacts/staging/tmpsst9odsl
+2024-03-11 18:53:28,510 INFO    SenderThread:36201 [sender.py:send_artifact():1428] sent artifact job-git_github.com_nikisim_RL_CannonBall.git_ppo_continuous_action.py - {'id': 'QXJ0aWZhY3Q6NzUxNjUyODg4', 'digest': 'a7695b2d502233927c6c27c048953130', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE0NzczMjUzMQ==', 'latestArtifact': None}, 'version': 'latest'}
+2024-03-11 18:53:28,510 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: defer
+2024-03-11 18:53:28,510 INFO    SenderThread:36201 [sender.py:send_request_defer():583] handle sender defer: 9
+2024-03-11 18:53:28,510 INFO    SenderThread:36201 [dir_watcher.py:finish():365] shutting down directory watcher
+2024-03-11 18:53:29,156 INFO    SenderThread:36201 [dir_watcher.py:finish():395] scan: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files
+2024-03-11 18:53:29,156 INFO    SenderThread:36201 [dir_watcher.py:finish():409] scan save: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/requirements.txt requirements.txt
+2024-03-11 18:53:29,156 INFO    SenderThread:36201 [dir_watcher.py:finish():409] scan save: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/diff.patch diff.patch
+2024-03-11 18:53:29,156 INFO    SenderThread:36201 [dir_watcher.py:finish():409] scan save: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/events.out.tfevents.1710172352.nikisim-kompuhter.36155.0 events.out.tfevents.1710172352.nikisim-kompuhter.36155.0
+2024-03-11 18:53:29,157 INFO    SenderThread:36201 [dir_watcher.py:finish():409] scan save: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log output.log
+2024-03-11 18:53:29,157 INFO    SenderThread:36201 [dir_watcher.py:finish():409] scan save: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/wandb-summary.json wandb-summary.json
+2024-03-11 18:53:29,157 INFO    SenderThread:36201 [dir_watcher.py:finish():409] scan save: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/config.yaml config.yaml
+2024-03-11 18:53:29,158 INFO    SenderThread:36201 [dir_watcher.py:finish():409] scan save: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/wandb-metadata.json wandb-metadata.json
+2024-03-11 18:53:29,158 INFO    SenderThread:36201 [dir_watcher.py:finish():409] scan save: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/code/ppo_continuous_action.py code/ppo_continuous_action.py
+2024-03-11 18:53:29,158 INFO    SenderThread:36201 [sender.py:transition_state():587] send defer: 10
+2024-03-11 18:53:29,158 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: defer
+2024-03-11 18:53:29,158 INFO    HandlerThread:36201 [handler.py:handle_request_defer():170] handle defer: 10
+2024-03-11 18:53:29,159 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: defer
+2024-03-11 18:53:29,162 INFO    SenderThread:36201 [sender.py:send_request_defer():583] handle sender defer: 10
+2024-03-11 18:53:29,162 INFO    SenderThread:36201 [file_pusher.py:finish():164] shutting down file pusher
+2024-03-11 18:53:29,789 INFO    wandb-upload_4:36201 [upload_job.py:push():138] Uploaded file /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/wandb-summary.json
+2024-03-11 18:53:29,789 INFO    wandb-upload_2:36201 [upload_job.py:push():138] Uploaded file /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/requirements.txt
+2024-03-11 18:53:29,803 INFO    wandb-upload_1:36201 [upload_job.py:push():138] Uploaded file /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/config.yaml
+2024-03-11 18:53:29,887 INFO    wandb-upload_0:36201 [upload_job.py:push():138] Uploaded file /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/files/output.log
+2024-03-11 18:53:29,887 INFO    wandb-upload_3:36201 [upload_job.py:push():138] Uploaded file /tmp/tmpuzegcxl3wandb/mryqg95v-events.out.tfevents.1710172352.nikisim-kompuhter.36155.0
+2024-03-11 18:53:30,088 INFO    Thread-12 (_thread_body):36201 [sender.py:transition_state():587] send defer: 11
+2024-03-11 18:53:30,088 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: defer
+2024-03-11 18:53:30,088 INFO    HandlerThread:36201 [handler.py:handle_request_defer():170] handle defer: 11
+2024-03-11 18:53:30,088 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: defer
+2024-03-11 18:53:30,088 INFO    SenderThread:36201 [sender.py:send_request_defer():583] handle sender defer: 11
+2024-03-11 18:53:30,088 INFO    SenderThread:36201 [file_pusher.py:join():169] waiting for file pusher
+2024-03-11 18:53:30,088 INFO    SenderThread:36201 [sender.py:transition_state():587] send defer: 12
+2024-03-11 18:53:30,088 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: defer
+2024-03-11 18:53:30,088 INFO    HandlerThread:36201 [handler.py:handle_request_defer():170] handle defer: 12
+2024-03-11 18:53:30,088 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: defer
+2024-03-11 18:53:30,088 INFO    SenderThread:36201 [sender.py:send_request_defer():583] handle sender defer: 12
+2024-03-11 18:53:30,250 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: keepalive
+2024-03-11 18:53:30,301 INFO    SenderThread:36201 [sender.py:transition_state():587] send defer: 13
+2024-03-11 18:53:30,301 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: defer
+2024-03-11 18:53:30,301 INFO    HandlerThread:36201 [handler.py:handle_request_defer():170] handle defer: 13
+2024-03-11 18:53:30,301 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: status_report
+2024-03-11 18:53:30,301 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: defer
+2024-03-11 18:53:30,302 INFO    SenderThread:36201 [sender.py:send_request_defer():583] handle sender defer: 13
+2024-03-11 18:53:30,302 INFO    SenderThread:36201 [sender.py:transition_state():587] send defer: 14
+2024-03-11 18:53:30,302 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: defer
+2024-03-11 18:53:30,302 DEBUG   SenderThread:36201 [sender.py:send():336] send: final
+2024-03-11 18:53:30,302 INFO    HandlerThread:36201 [handler.py:handle_request_defer():170] handle defer: 14
+2024-03-11 18:53:30,302 DEBUG   SenderThread:36201 [sender.py:send():336] send: footer
+2024-03-11 18:53:30,302 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: defer
+2024-03-11 18:53:30,302 INFO    SenderThread:36201 [sender.py:send_request_defer():583] handle sender defer: 14
+2024-03-11 18:53:30,302 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: poll_exit
+2024-03-11 18:53:30,302 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: poll_exit
+2024-03-11 18:53:30,302 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: server_info
+2024-03-11 18:53:30,303 DEBUG   SenderThread:36201 [sender.py:send_request():363] send_request: server_info
+2024-03-11 18:53:30,303 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: get_summary
+2024-03-11 18:53:30,304 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: sampled_history
+2024-03-11 18:53:30,507 INFO    MainThread:36201 [wandb_run.py:_footer_history_summary_info():3429] rendering history
+2024-03-11 18:53:30,507 INFO    MainThread:36201 [wandb_run.py:_footer_history_summary_info():3461] rendering summary
+2024-03-11 18:53:30,508 INFO    MainThread:36201 [wandb_run.py:_footer_sync_info():3387] logging synced files
+2024-03-11 18:53:30,508 DEBUG   HandlerThread:36201 [handler.py:handle_request():144] handle_request: shutdown
+2024-03-11 18:53:30,508 INFO    HandlerThread:36201 [handler.py:finish():842] shutting down handler
+2024-03-11 18:53:31,303 INFO    WriterThread:36201 [datastore.py:close():298] close: /home/nikisim/Documents/gym-CannonBall/wandb/run-20240311_185231-79ek57lf/run-79ek57lf.wandb
+2024-03-11 18:53:31,507 INFO    SenderThread:36201 [sender.py:finish():1504] shutting down sender
+2024-03-11 18:53:31,507 INFO    SenderThread:36201 [file_pusher.py:finish():164] shutting down file pusher
+2024-03-11 18:53:31,507 INFO    SenderThread:36201 [file_pusher.py:join():169] waiting for file pusher

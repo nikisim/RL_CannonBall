@@ -1,0 +1,132 @@
+{
+    "os": "Linux-6.5.0-25-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "heartbeatAt": "2024-03-11T15:59:05.689658",
+    "startedAt": "2024-03-11T15:59:05.039370",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--total-timesteps",
+        "500000",
+        "--track",
+        "--wandb-project-name",
+        "CannonBAll",
+        "--save_model"
+    ],
+    "state": "running",
+    "program": "/home/nikisim/Documents/gym-CannonBall/ppo_continuous_action.py",
+    "codePath": "ppo_continuous_action.py",
+    "git": {
+        "remote": "git@github.com:nikisim/RL_CannonBall.git",
+        "commit": "274e9e67a21cd300a17ec4927c832d241dea3f81"
+    },
+    "email": "nikisim2000@gmail.com",
+    "root": "/home/nikisim/Documents/gym-CannonBall",
+    "host": "nikisim-kompuhter",
+    "username": "nikisim",
+    "executable": "/usr/bin/python3",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 3658.81125,
+        "min": 400.0,
+        "max": 5050.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 400.0,
+            "min": 400.0,
+            "max": 5050.0
+        },
+        {
+            "current": 4030.855,
+            "min": 400.0,
+            "max": 5050.0
+        },
+        {
+            "current": 4962.807,
+            "min": 400.0,
+            "max": 5050.0
+        },
+        {
+            "current": 3487.089,
+            "min": 400.0,
+            "max": 5050.0
+        },
+        {
+            "current": 4962.854,
+            "min": 400.0,
+            "max": 5050.0
+        },
+        {
+            "current": 3507.25,
+            "min": 400.0,
+            "max": 5050.0
+        },
+        {
+            "current": 3785.787,
+            "min": 400.0,
+            "max": 5050.0
+        },
+        {
+            "current": 3734.249,
+            "min": 400.0,
+            "max": 5050.0
+        },
+        {
+            "current": 4336.381,
+            "min": 400.0,
+            "max": 5050.0
+        },
+        {
+            "current": 4965.363,
+            "min": 400.0,
+            "max": 5050.0
+        },
+        {
+            "current": 400.0,
+            "min": 400.0,
+            "max": 5050.0
+        },
+        {
+            "current": 3976.726,
+            "min": 400.0,
+            "max": 5050.0
+        },
+        {
+            "current": 4960.6,
+            "min": 400.0,
+            "max": 5050.0
+        },
+        {
+            "current": 3981.701,
+            "min": 400.0,
+            "max": 5050.0
+        },
+        {
+            "current": 3678.618,
+            "min": 400.0,
+            "max": 5050.0
+        },
+        {
+            "current": 3907.146,
+            "min": 400.0,
+            "max": 5050.0
+        }
+    ],
+    "disk": {
+        "total": 571.9994201660156,
+        "used": 93.2680435180664
+    },
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4070",
+            "memory_total": 12878610432
+        }
+    ],
+    "memory": {
+        "total": 30.56137466430664
+    }
+}
