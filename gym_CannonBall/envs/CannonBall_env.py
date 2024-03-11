@@ -21,7 +21,9 @@ class CannonEnv(gym.Env):
         self.angle = None
         self.distance_to_target = None
         self.current_distance = None
-        self.target_distance = np.random.uniform(low=500, high=1000)  # Random target distance for each episode
+        self.target_distance = None  # Random target distance for each episode
+        self.episode_reward = 0
+        self.episode_length = 0
 
     def step(self, action: float):
         # Execute one time step within the environment
@@ -31,15 +33,30 @@ class CannonEnv(gym.Env):
         # Calculate reward, done, and info
         reward = self._calculate_reward()
         done = True  # In this case, we end the episode after one shot
-        info = {}
-        
+                
+        self.episode_reward += reward
+        self.episode_length += 1
+
+        if done:
+            # Populate the info dictionary with episodic information
+            self.info['final_info'] = {
+                'episode': {
+                    'r': self.episode_reward,
+                    'l': self.episode_length,
+                }
+                # Include any other information you want to track
+            }
+            # Reset episode information
+            self.episode_reward = 0
+            self.episode_length = 0
+
         # Return the next observation, reward, done, and info
-        return self._get_obs(), reward, done, False,info
+        return self._get_obs(), reward, done, False, self.info
 
     def reset(self):
         # Reset the state of the environment to an initial state
         self.angle = np.random.uniform(low=0, high=np.pi/2)
-        self.distance_to_target = self.target_distance
+        self.distance_to_target = np.random.uniform(low=500, high=1000)  # Random target distance for each episode
         return self._get_obs(),self.info
 
     def render(self, mode='human', close=False):
@@ -56,11 +73,14 @@ class CannonEnv(gym.Env):
         # For now, we'll just set the distance to a random value
         # self.distance_to_target = np.random.uniform(low=0, high=self.target_distance)
         self.current_distance = speed**2 * math.sin(2*self.angle)/(9.80665)
+        # make some noise
+        self.current_distance += np.random.normal(0,1,1)[0]
         # print(f'Current dist: {self.current_distance:.1f}')
-        self.distance_to_target = self.target_distance - self.current_distance
+        self.distance_to_target = self.distance_to_target - self.current_distance
 
     def _calculate_reward(self):
         # Helper method to calculate the reward
         # For now, we'll just return a reward based on how close the shot is to the target
-        reward = max(0, 100 - abs(self.target_distance - self.current_distance))
+        reward = max(0, 500 - abs(self.distance_to_target - self.current_distance))
+        #reward = 1/abs(self.target_distance - self.current_distance)
         return reward
