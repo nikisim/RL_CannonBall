@@ -11,7 +11,7 @@ class CannonEnv(gym.Env):
         # Define action and observation space
         # They must be gym.spaces objects
         # Example when using continuous actions:
-        self.action_space = spaces.Box(low=0, high=100, shape=(1,), dtype=np.float32)
+        self.action_space = spaces.Box(low=0, high=50, shape=(1,), dtype=np.float32)
         
         # Example for using continuous observations (angle in radians and distance):
         self.observation_space = spaces.Box(low=np.array([0, 0]), high=np.array([np.pi/2, 1000]), dtype=np.float32)
@@ -81,6 +81,6 @@ class CannonEnv(gym.Env):
     def _calculate_reward(self):
         # Helper method to calculate the reward
         # For now, we'll just return a reward based on how close the shot is to the target
-        reward = max(0, 500 - abs(self.distance_to_target - self.current_distance))
+        reward = max(-100, 500 - abs(self.distance_to_target - self.current_distance))
         #reward = 1/abs(self.target_distance - self.current_distance)
         return reward
