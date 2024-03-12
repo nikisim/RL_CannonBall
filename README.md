@@ -2,6 +2,8 @@
 
 This repository contains RL env with simple model of Cannon Ball shot [in progress]
 
+<img align="right" src="Images/image.jpg" alt="CannonEnv Environment" width="250"/>
+
 ## Installation
 Для того, чтобы установить среду необходимо выполнить следующую команду:
 ```
