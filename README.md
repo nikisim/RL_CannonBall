@@ -18,7 +18,6 @@ The distance to the target (in meters), ranging from 0 to 1000 meters.
 
 ## How it works
 
-How It Works:
 **Initialization**: At the start of each episode, the environment randomly selects a target distance and sets a random angle for the cannon.
 
 **Action**: The agent specifies the initial speed of the cannonball.
