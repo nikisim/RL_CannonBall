@@ -1,6 +1,6 @@
 # RL_CannonBall
 
-This repository contains RL env with Cannon Ball [in progress]
+This repository contains RL env with simple model of Cannon Ball shot [in progress]
 
 ## Installation
 Для того, чтобы установить среду необходимо выполнить следующую команду:
@@ -24,11 +24,11 @@ env.close()
 ```
 
 ## About Cannon env
-Среда представляет собой упрощенную модель выстрела ядра из пушки по заданному углу и расстоянию до цели.
+Среда представляет собой упрощенную модель выстрела ядра из пушки по заданному углу и расстоянию до цели. В качестве усложения к модели среды добавлен белый шум.
 
 | Environment Id | Observation Space |Action Space| Reward Range | 
 | -------------| ------ |------ | -----------|
-| CannonEnv-v0 |Box(1,2)|Box(1,)|(-100, 500) | 
+| CannonEnv-v0 |Box(2,) |Box(1,)|(-100, 500) | 
 
 ### State
 Наблюдением является заданный угол и расстояние до цели, которые в свою очередь явлюятся числами типа float32.
