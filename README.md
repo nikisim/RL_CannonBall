@@ -20,9 +20,12 @@ The distance to the target (in meters), ranging from 0 to 1000 meters.
 
 How It Works:
 **Initialization**: At the start of each episode, the environment randomly selects a target distance and sets a random angle for the cannon.
+
 **Action**: The agent specifies the initial speed of the cannonball.
 Simulation: The environment calculates the trajectory of the cannonball based on the given speed and the current angle, then updates the distance to the target.
+
 **Reward**: A reward is given based on how close the cannonball lands to the target, with a higher reward for more accurate shots.
+
 **Episode Termination**: Each episode ends after one shot, allowing the agent to immediately learn from the outcome and prepare for the next attempt.
 
 
