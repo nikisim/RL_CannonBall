@@ -1,6 +1,6 @@
 import numpy as np
 import gym
-import CannonEnv  # Make sure to import your CannonEnv class
+import gym_CannonBall  # Make sure to import your CannonEnv class
 
 def train_cem(env, n_iterations=100, batch_size=50, elite_frac=0.2, initial_std=10.0):
     """
@@ -36,7 +36,7 @@ def train_cem(env, n_iterations=100, batch_size=50, elite_frac=0.2, initial_std=
 
         print(f"Iteration {iteration + 1}/{n_iterations}: mean reward = {rewards.mean()}")
 
-    return mean
+    return mean, std
 
 def evaluate_action(env, action):
     """
@@ -53,7 +53,34 @@ def evaluate_action(env, action):
     observation, reward, done, _, info = env.step(action)
     return reward
 
+def generate_session(env, mean, std):
+    """
+    Play game until end or for t_max ticks.
+    :param policy: an array of shape [n_states,n_actions] with action probabilities
+    :returns: list of states, list of actions and sum of rewards
+    """
+    states, actions = [], []
+    total_reward = 0.0
+
+    s, _ = env.reset()
+   
+    a = np.random.normal(mean, std, size=(1, env.action_space.shape[0]))
+    print(a)
+
+    new_s, r, terminated, truncated, _ = env.step(a)
+
+    # Record information we just got from the environment.
+    states.append(s)
+    actions.append(a)
+    total_reward += r
+
+    s = new_s
+
+    return states, actions, total_reward
+
 if __name__ == "__main__":
-    env = CannonEnv()  # Initialize your environment
-    optimal_action = train_cem(env)
-    print(f"Optimal initial speed found: {optimal_action}")
+    env = gym.make('gym_CannonBall/CannonEnv-v0')  
+
+    mean, std = train_cem(env)
+    print(np.random.uniform(mean,std, size=(1, env.action_space.shape[0])))
+    print(f"Optimal initial speed found: {mean, std}")

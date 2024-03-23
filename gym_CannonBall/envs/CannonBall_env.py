@@ -1,4 +1,4 @@
-import gym
+import gymnasium as gym
 from gym import spaces
 import numpy as np
 import math
@@ -11,7 +11,10 @@ class CannonEnv(gym.Env):
         # Define action and observation space
         # They must be gym.spaces objects
         # Example when using continuous actions:
-        self.action_space = spaces.Box(low=0, high=50, shape=(1,), dtype=np.float32)
+        # self.action_space = spaces.Box(low=0, high=50, shape=(1,), dtype=np.float32)
+        n_actions = 10
+        actions = np.linspace(0,100,n_actions)
+        self.action_space = spaces.Discrete(actions)
         
         # Example for using continuous observations (angle in radians and distance):
         self.observation_space = spaces.Box(low=np.array([0, 0]), high=np.array([np.pi/2, 1000]), dtype=np.float32)
@@ -27,8 +30,11 @@ class CannonEnv(gym.Env):
 
     def step(self, action: float):
         # Execute one time step within the environment
-        speed = action[0]
-        self._take_shot(speed)
+        #speed = action[0]
+        self._take_shot(action)
+        
+        if not self.action_space.contains(action):
+            raise ValueError(f"Action '{action}' is not in action_space")
         
         # Calculate reward, done, and info
         reward = self._calculate_reward()
