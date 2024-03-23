@@ -5,4 +5,4 @@ runs/
 .vscode/
 __pycache__/
 gym_CannonBall/__pycache__/
-gym_CannonBall/envs/__pycache__/
+gym_CannonBall/envs/__pycache__/git 
