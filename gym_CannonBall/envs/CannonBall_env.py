@@ -11,11 +11,11 @@ class CannonEnv(gym.Env):
         # Define action and observation space
         # They must be gym.spaces objects
         # Example when using continuous actions:
-        self.action_space = spaces.Box(low=0, high=50, shape=(1,), dtype=np.float32)
+        self.action_space = spaces.Box(low=0, high=100, shape=(1,), dtype=np.float32)
         
         # Example for using continuous observations (angle in radians and distance):
         self.observation_space = spaces.Box(low=np.array([0, 0]), high=np.array([np.pi/2, 1000]), dtype=np.float32)
-        
+        self._max_episode_steps = 1
         self.info = {}
         # Initialize state
         self.angle = None
@@ -51,12 +51,13 @@ class CannonEnv(gym.Env):
             self.episode_length = 0
 
         # Return the next observation, reward, done, and info
-        return self._get_obs(), reward, done, False, self.info
+        return self._get_obs(), reward, done, self.info
 
     def reset(self):
         # Reset the state of the environment to an initial state
         self.angle = np.random.uniform(low=0, high=np.pi/2)
-        self.distance_to_target = np.random.uniform(low=500, high=1000)  # Random target distance for each episode
+        self.distance_to_target = np.random.uniform(low=10, high=1000)  # Random target distance for each episode
+        self.target_distance = self.distance_to_target
         return self._get_obs(),self.info
 
     def render(self, mode='human', close=False):
@@ -65,7 +66,7 @@ class CannonEnv(gym.Env):
 
     def _get_obs(self):
         # Helper method to get the current observation
-        return np.array([self.angle, self.distance_to_target], dtype=np.float32)
+        return np.array([self.angle, abs(self.distance_to_target)], dtype=np.float32)
 
     def _take_shot(self, speed:float):
         # Helper method to simulate taking a shot
@@ -74,13 +75,13 @@ class CannonEnv(gym.Env):
         # self.distance_to_target = np.random.uniform(low=0, high=self.target_distance)
         self.current_distance = speed**2 * math.sin(2*self.angle)/(9.80665)
         # make some noise
-        self.current_distance += np.random.normal(0,1,1)[0]
+        #self.current_distance += np.random.normal(0,1,1)[0]
         # print(f'Current dist: {self.current_distance:.1f}')
         self.distance_to_target = self.distance_to_target - self.current_distance
 
     def _calculate_reward(self):
         # Helper method to calculate the reward
         # For now, we'll just return a reward based on how close the shot is to the target
-        reward = max(-100, 500 - abs(self.distance_to_target - self.current_distance))
+        reward = max(-100, 500 - abs(self.target_distance - self.current_distance))
         #reward = 1/abs(self.target_distance - self.current_distance)
         return reward
