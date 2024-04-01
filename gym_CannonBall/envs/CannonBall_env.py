@@ -82,6 +82,6 @@ class CannonEnv(gym.Env):
     def _calculate_reward(self):
         # Helper method to calculate the reward
         # For now, we'll just return a reward based on how close the shot is to the target
-        reward = max(-100, 500 - abs(self.target_distance - self.current_distance))
+        reward = max(-100, 100 - abs(self.target_distance - self.current_distance))
         #reward = 1/abs(self.target_distance - self.current_distance)
         return reward

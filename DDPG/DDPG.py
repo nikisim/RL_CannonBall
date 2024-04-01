@@ -70,8 +70,8 @@ class ReplayBuffer(object):
 
 class DDPG(object):
     def __init__(self, state_dim, action_dim, max_action):
-        self.hidden_width = 256  # The number of neurons in hidden layers of the neural network
-        self.batch_size = 256  # batch size
+        self.hidden_width = 64  # The number of neurons in hidden layers of the neural network
+        self.batch_size = 64  # batch size
         self.GAMMA = 0.99  # discount factor
         self.TAU = 0.005  # Softly update the target network
         self.lr = 3e-4  # learning rate
