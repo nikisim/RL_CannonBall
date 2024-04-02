@@ -4,7 +4,7 @@ CannonEnv is a custom reinforcement learning environment built on the OpenAI Gym
 
 <img align="right" src="Images/image.jpg" alt="CannonEnv Environment" width="250"/>
 
-**Action Space**: The action space is continuous, representing the initial speed (m/s) of the cannonball. It ranges from 0 to 50 m/s.
+**Action Space**: The action space is continuous, representing the initial speed (m/s) of the cannonball. It ranges from 0 to 100 m/s.
 
 **Observation Space**: The observation space is continuous and consists of two values:
 The angle (in radians) at which the cannon is currently aimed, ranging from 0 to π/2.
@@ -55,7 +55,7 @@ env.close()
 
 | Environment Id | Observation Space |Action Space| Reward Range | 
 | -------------| ------ |------ | -----------|
-| CannonEnv-v0 |Box(2,) |Box(1,)|(-100, 500) | 
+| CannonEnv-v0 |Box(2,) |Box(1,)|(-100, 100) | 
 
 ### State
 Наблюдением является заданный угол и расстояние до цели, которые в свою очередь явлюятся числами типа float32.
@@ -71,6 +71,11 @@ state, _ = env.reset()
 ### Reward
 Награда задается как:
 ```
-reward = max(-100, 500 - abs(diff between target and current ball coordinate))
+reward = max(-100, 100 - abs(diff between target and current ball landing coordinate))
 ```
 
+## Results with DDPG
+
+<img align="center" src="Images/Chart1.png" alt="DDPG perfomance" width="1000"/>
+
+<img align="center" src="Images/Best_score.png" alt="DDPG perfomance" width="500"/>

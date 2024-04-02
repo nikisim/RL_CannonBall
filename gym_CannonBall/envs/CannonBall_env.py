@@ -3,6 +3,9 @@ from gym import spaces
 import numpy as np
 import math
 
+MIN_REWARD = -100
+MAX_REWARD = 100
+
 class CannonEnv(gym.Env):
 
     def __init__(self):
@@ -31,7 +34,10 @@ class CannonEnv(gym.Env):
         self._take_shot(speed)
         
         # Calculate reward, done, and info
-        reward = self._calculate_reward()
+        if speed <= 0.0:
+            reward = MIN_REWARD
+        else:
+            reward = self._calculate_reward()
         done = True  # In this case, we end the episode after one shot
                 
         self.episode_reward += reward
@@ -82,6 +88,6 @@ class CannonEnv(gym.Env):
     def _calculate_reward(self):
         # Helper method to calculate the reward
         # For now, we'll just return a reward based on how close the shot is to the target
-        reward = max(-100, 100 - abs(self.target_distance - self.current_distance))
+        reward = max(MIN_REWARD, MAX_REWARD - abs(self.target_distance - self.current_distance))
         #reward = 1/abs(self.target_distance - self.current_distance)
         return reward

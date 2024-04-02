@@ -69,21 +69,18 @@ class ReplayBuffer(object):
 
 
 class DDPG(object):
-    def __init__(self, state_dim, action_dim, max_action, load):
+    def __init__(self, state_dim, action_dim, max_action):
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.hidden_width = 32  # The number of neurons in hidden layers of the neural network
         self.batch_size = 32  # batch size
         self.GAMMA = 0.99  # discount factor
         self.TAU = 0.005  # Softly update the target network
-        self.lr = 3e-4  # learning rate
+        self.lr = 1e-4  # learning rate
 
-        if load:
-            self.actor = torch.load('saved_models/actor') 
-            self.critic = torch.load('saved_models/critic')
-        else:  
-            self.actor = Actor(state_dim, action_dim, self.hidden_width, max_action)
-            self.critic = Critic(state_dim, action_dim, self.hidden_width)
-        self.actor_target = copy.deepcopy(self.actor)
-        self.critic_target = copy.deepcopy(self.critic)
+        self.actor = Actor(state_dim, action_dim, self.hidden_width, max_action).to(self.device)
+        self.actor_target = copy.deepcopy(self.actor).to(self.device)
+        self.critic = Critic(state_dim, action_dim, self.hidden_width).to(self.device)
+        self.critic_target = copy.deepcopy(self.critic).to(self.device)
 
         self.actor_optimizer = torch.optim.Adam(self.actor.parameters(), lr=self.lr)
         self.critic_optimizer = torch.optim.Adam(self.critic.parameters(), lr=self.lr)
@@ -91,12 +88,18 @@ class DDPG(object):
         self.MseLoss = nn.MSELoss()
 
     def choose_action(self, s):
-        s = torch.unsqueeze(torch.tensor(s, dtype=torch.float), 0)
-        a = self.actor(s).data.numpy().flatten()
+        s = torch.unsqueeze(torch.tensor(s, dtype=torch.float), 0).to(self.device)
+        a = self.actor(s).data.cpu().numpy().flatten()
         return a
 
     def learn(self, relay_buffer):
         batch_s, batch_a, batch_r, batch_s_, batch_dw = relay_buffer.sample(self.batch_size)  # Sample a batch
+
+        batch_s = batch_s.to(self.device)
+        batch_a = batch_a.to(self.device)
+        batch_r = batch_r.to(self.device)
+        batch_s_ = batch_s_.to(self.device)
+        batch_dw = batch_dw.to(self.device)
 
         # Compute the target Q
         with torch.no_grad():  # target_Q has no gradient
@@ -133,6 +136,9 @@ class DDPG(object):
         for param, target_param in zip(self.actor.parameters(), self.actor_target.parameters()):
             target_param.data.copy_(self.TAU * param.data + (1 - self.TAU) * target_param.data)
 
+def reward_adapter(r):
+    r = (r + 8) / 8
+    return r
 
 def evaluate_policy(env, agent):
     times = 3  # Perform three evaluations and calculate the average
@@ -156,15 +162,6 @@ def evaluate_policy(env, agent):
         print('------'*10)
 
     return int(evaluate_reward / times)
-
-
-def reward_adapter(r, env_index):
-    if env_index == 0:  # Pendulum-v1
-        r = (r + 8) / 8
-    elif env_index == 1:  # BipedalWalker-v3
-        if r <= -100:
-            r = -1
-    return r
 
 # def wandb_init(config: dict) -> None:
 #     wandb.init(
@@ -193,7 +190,7 @@ if __name__ == '__main__':
     env.action_space.seed(seed)
     env_evaluate.seed(seed)
     env_evaluate.action_space.seed(seed)
-    np.random.seed(seed)
+    #np.random.seed(seed)
     torch.manual_seed(seed)
 
     state_dim = env.observation_space.shape[0]
@@ -206,10 +203,11 @@ if __name__ == '__main__':
     print("max_action={}".format(max_action))
     print("max_episode_steps={}".format(max_episode_steps))
 
-    agent = DDPG(state_dim, action_dim, max_action, load=False)
+    agent = DDPG(state_dim, action_dim, max_action)
     replay_buffer = ReplayBuffer(state_dim, action_dim)
     # Build a tensorboard
-    writer = SummaryWriter(log_dir='runs/DDPG/DDPG_env_{}_number_{}'.format(env_name[env_index], number, seed))
+    num = int(np.random.random()*100)
+    writer = SummaryWriter(log_dir='runs/DDPG/DDPG_env_{}_number_{}'.format(env_name[env_index], num, seed))
 
     noise_std = 0.1 * max_action  # the std of Gaussian noise for exploration
     max_train_steps = 3e6  # Maximum number of training steps
@@ -220,7 +218,7 @@ if __name__ == '__main__':
     evaluate_rewards = []  # Record the rewards during the evaluating
     total_steps = 0  # Record the total steps during the training
 
-    while total_steps < 10:
+    while total_steps < max_train_steps:
         s, _ = env.reset()
         episode_steps = 0
         done = False
@@ -233,10 +231,7 @@ if __name__ == '__main__':
                 a = agent.choose_action(s)
                 a = (a + np.random.normal(0, noise_std, size=action_dim)).clip(-max_action, max_action)
             s_, r, done, _ = env.step(a)
-            r = reward_adapter(r, env_index)   # Adjust rewards for better performance
-            # When dead or win or reaching the max_episode_steps, done will be Ture, we need to distinguish them;
-            # dw means dead or win,there is no next state s';
-            # but when reaching the max_episode_steps,there is a next state s' actually.
+            r = reward_adapter(r)
             if done and episode_steps != max_episode_steps:
                 dw = True
             else:
@@ -269,7 +264,3 @@ if __name__ == '__main__':
                     # print("REWARDS:", np.array(evaluate_rewards))
 
             total_steps += 1
-    
-    #save model
-    torch.save(agent.actor.state_dict(), "saved_models")
-    torch.save(agent.critic.state_dict(), "saved_models")
